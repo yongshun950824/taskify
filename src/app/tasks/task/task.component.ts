@@ -12,7 +12,7 @@ import { initFlowbite } from 'flowbite';
 export class TaskComponent {
   @Input() task: Task = { text: '', createdAt: '', id: 0 };
 
-  ngOnInit() {
+  ngAfterViewInit() {
     initFlowbite();
   }
 }
