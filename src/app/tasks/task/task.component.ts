@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Task } from '../../interfaces';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-task',
@@ -9,5 +10,9 @@ import { Task } from '../../interfaces';
   styleUrl: './task.component.css',
 })
 export class TaskComponent {
-  @Input() task: Task = { text: '', createdAt: '' };
+  @Input() task: Task = { text: '', createdAt: '', id: 0 };
+
+  ngOnInit() {
+    initFlowbite();
+  }
 }

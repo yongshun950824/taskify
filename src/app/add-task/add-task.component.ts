@@ -12,10 +12,13 @@ import { Task } from '../interfaces';
 export class AddTaskComponent {
   newTask = '';
   @Output() addTaskEvent = new EventEmitter<Task>();
+  count = 0;
 
   onAddNewTask(task: string) {
+    this.count++;
     const today = new Date();
     this.addTaskEvent.emit({
+      id: this.count,
       text: task,
       createdAt: today.toISOString().split('T')[0],
     });
